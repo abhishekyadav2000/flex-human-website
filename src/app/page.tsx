@@ -1,12 +1,10 @@
 import { CapabilitiesBanner } from "@/components/home/CapabilitiesBanner";
 import Link from "next/link";
-import Image from "next/image";
 import {
   brand,
   capabilities,
   hero,
   industries,
-  products,
 } from "@/lib/content";
 
 export default function HomePage() {
@@ -26,9 +24,6 @@ export default function HomePage() {
             <Link href="/contact" className="btn-primary">
               Partner With Us
             </Link>
-            <Link href="/products" className="btn-outline">
-              View Prototypes
-            </Link>
           </div>
         </div>
       </section>
@@ -47,39 +42,6 @@ export default function HomePage() {
                 <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">
                   {cap.description}
                 </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-y border-[var(--border)] bg-[var(--surface)] px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-            <div>
-              <p className="section-label">Prototype Portfolio</p>
-              <h2 className="mt-4 text-3xl font-bold">Products &amp; Prototypes</h2>
-            </div>
-            <Link href="/products" className="btn-outline shrink-0 self-start lg:self-auto">
-              Explore All Products
-            </Link>
-          </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {products.slice(0, 6).map((product) => (
-              <article key={product.name} className="card-glow overflow-hidden rounded-xl p-6">
-                {product.image && (
-                  <div className="relative -mx-6 -mt-6 mb-4 aspect-[4/3] w-[calc(100%+3rem)] border-b border-[var(--border)] bg-[var(--surface-elevated)]">
-                    <Image
-                      src={product.image}
-                      alt={product.imageAlt ?? product.name}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
-                  </div>
-                )}
-                <h3 className="font-semibold text-[var(--accent)]">{product.name}</h3>
-                <p className="mt-3 text-sm text-[var(--muted)]">{product.description}</p>
               </article>
             ))}
           </div>
