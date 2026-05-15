@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { LoadingGate } from "@/components/LoadingGate";
 import { SiteLayout } from "@/components/SiteLayout";
 import { brand } from "@/lib/content";
 import "./globals.css";
@@ -41,7 +42,9 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
-        <SiteLayout>{children}</SiteLayout>
+        <LoadingGate>
+          <SiteLayout>{children}</SiteLayout>
+        </LoadingGate>
       </body>
     </html>
   );

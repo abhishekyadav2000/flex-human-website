@@ -53,27 +53,39 @@ export default function CorporateInformationPage() {
 
         <div className="mx-auto mt-16 max-w-2xl space-y-8 text-sm text-[var(--muted)]">
           <article id="privacy">
-            <h2 className="text-lg font-semibold text-white">Privacy Policy</h2>
-            <p className="mt-2">Privacy policy content will be published here. Contact {brand.email} for inquiries.</p>
+            <h2 className="text-lg font-semibold text-[var(--foreground)]">Privacy Policy</h2>
+            <p className="mt-2">
+              Read our full{" "}
+              <a href="/privacy" className="text-[var(--accent)] hover:underline">
+                Privacy Policy
+              </a>
+              .
+            </p>
           </article>
           <article id="terms">
-            <h2 className="text-lg font-semibold text-white">Terms of Use</h2>
-            <p className="mt-2">Terms of use content will be published here.</p>
+            <h2 className="text-lg font-semibold text-[var(--foreground)]">Terms &amp; Conditions</h2>
+            <p className="mt-2">
+              Read our full{" "}
+              <a href="/terms" className="text-[var(--accent)] hover:underline">
+                Terms &amp; Conditions
+              </a>
+              .
+            </p>
           </article>
           <article id="accessibility">
-            <h2 className="text-lg font-semibold text-white">Accessibility</h2>
+            <h2 className="text-lg font-semibold text-[var(--foreground)]">Accessibility</h2>
             <p className="mt-2">We are committed to making our website accessible to all users.</p>
           </article>
           <article id="cookies">
-            <h2 className="text-lg font-semibold text-white">Cookie Policy</h2>
+            <h2 className="text-lg font-semibold text-[var(--foreground)]">Cookie Policy</h2>
             <p className="mt-2">Cookie policy content will be published here.</p>
           </article>
           <article id="vendor">
-            <h2 className="text-lg font-semibold text-white">Vendor Terms</h2>
+            <h2 className="text-lg font-semibold text-[var(--foreground)]">Vendor Terms</h2>
             <p className="mt-2">Vendor terms content will be published here.</p>
           </article>
           <article id="research-terms">
-            <h2 className="text-lg font-semibold text-white">Research Collaboration Terms</h2>
+            <h2 className="text-lg font-semibold text-[var(--foreground)]">Research Collaboration Terms</h2>
             <p className="mt-2">Research collaboration terms content will be published here.</p>
           </article>
         </div>

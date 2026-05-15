@@ -1,3 +1,4 @@
+import { CapabilitiesBanner } from "@/components/home/CapabilitiesBanner";
 import Link from "next/link";
 import {
   brand,
@@ -31,16 +32,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="px-4 py-20 sm:px-6 lg:px-8">
+      <CapabilitiesBanner />
+
+      <section className="px-4 pb-20 pt-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="text-center">
-            <p className="section-label">Capabilities</p>
-            <h2 className="mt-4 text-3xl font-bold">What We Engineer</h2>
-            <p className="mx-auto mt-4 max-w-2xl text-[var(--muted)]">
-              {brand.primaryStatement}
-            </p>
-          </div>
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {capabilities.map((cap) => (
               <article key={cap.title} className="card-glow rounded-xl p-6">
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--accent)]/10 text-[var(--accent)]">
@@ -111,25 +107,6 @@ export default function HomePage() {
                 {tag}
               </span>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl rounded-2xl border border-[var(--border)] bg-gradient-to-br from-[var(--surface-elevated)] to-[var(--surface)] p-10 text-center lg:p-16">
-          <h2 className="text-2xl font-bold sm:text-3xl">Build technologies that extend human capability.</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-[var(--muted)]">
-            At Flex Human, you won&apos;t optimize ad clicks. You&apos;ll help engineer systems that restore
-            movement, improve comfort, augment human performance, and shape the future of human-machine
-            interaction.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Link href="/careers" className="btn-primary">
-              View Careers
-            </Link>
-            <Link href="/contact" className="btn-outline">
-              Contact Us
-            </Link>
           </div>
         </div>
       </section>

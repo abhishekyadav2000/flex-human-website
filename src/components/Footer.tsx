@@ -3,7 +3,7 @@ import { brand, footerCompany, footerSolutions, legalLinks } from "@/lib/content
 
 export function Footer() {
   return (
-    <footer className="border-t border-[var(--border)] bg-[#03060c]">
+    <footer className="border-t border-[var(--border)] bg-[var(--surface)]">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>

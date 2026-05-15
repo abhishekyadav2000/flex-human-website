@@ -23,7 +23,7 @@ export default function ContactPage() {
             <h2 className="text-xl font-semibold">Headquarters / Digital Presence</h2>
             <ul className="mt-6 space-y-4 text-[var(--muted)]">
               <li>
-                <strong className="text-white">Flex Human LLC</strong>
+                <strong className="text-[var(--foreground)]">Flex Human LLC</strong>
               </li>
               <li>
                 Email:{" "}

@@ -258,12 +258,13 @@ export const footerCompany = [
   { label: "Client Services", href: "/contact" },
   { label: "Insights / News", href: "/about#insights" },
   { label: "Careers", href: "/careers" },
+  { label: "Brochure", href: "/brochure" },
   { label: "Partner With Us", href: "/contact" },
 ];
 
 export const legalLinks = [
-  { label: "Privacy Policy", href: "/corporate-information#privacy" },
-  { label: "Terms of Use", href: "/corporate-information#terms" },
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Terms & Conditions", href: "/terms" },
   { label: "Accessibility", href: "/corporate-information#accessibility" },
   { label: "Cookie Policy", href: "/corporate-information#cookies" },
   { label: "Careers Policy", href: "/careers#policy" },

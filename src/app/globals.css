@@ -1,16 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #05080f;
-  --foreground: #e8edf5;
-  --muted: #8b9bb5;
-  --accent: #3d9eff;
-  --accent-glow: #5eb8ff;
-  --surface: #0c1220;
-  --surface-elevated: #121a2e;
-  --border: rgba(94, 184, 255, 0.12);
-  --gradient-start: #0a1628;
-  --gradient-end: #05080f;
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --muted: #64748b;
+  --accent: #2563eb;
+  --accent-glow: #3b82f6;
+  --accent-purple: #7c3aed;
+  --surface: #f8fafc;
+  --surface-elevated: #f1f5f9;
+  --border: rgba(15, 23, 42, 0.1);
+  --gradient-start: #f0f7ff;
+  --gradient-end: #ffffff;
+  --flex-gradient: linear-gradient(90deg, #2563eb 0%, #6366f1 50%, #7c3aed 100%);
+  --flex-gradient-vertical: linear-gradient(180deg, #2563eb 0%, #7c3aed 100%);
 }
 
 @theme inline {
@@ -39,37 +42,45 @@ body {
 }
 
 ::selection {
-  background: rgba(61, 158, 255, 0.35);
-  color: #fff;
+  background: rgba(37, 99, 235, 0.2);
+  color: var(--foreground);
 }
 
 .gradient-mesh {
   background:
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(61, 158, 255, 0.15), transparent),
-    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(94, 184, 255, 0.08), transparent),
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(37, 99, 235, 0.08), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(124, 58, 237, 0.05), transparent),
     linear-gradient(180deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
 }
 
 .card-glow {
-  background: linear-gradient(135deg, rgba(18, 26, 46, 0.9) 0%, rgba(12, 18, 32, 0.95) 100%);
+  background: #ffffff;
   border: 1px solid var(--border);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .card-glow:hover {
-  border-color: rgba(94, 184, 255, 0.35);
-  box-shadow: 0 0 40px rgba(61, 158, 255, 0.08);
+  border-color: rgba(37, 99, 235, 0.25);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.1);
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #fff 0%, #8ec5ff 50%, #3d9eff 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #1e40af 50%, #2563eb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-brand {
+  background: var(--flex-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #3d9eff 0%, #2563eb 100%);
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
   color: white;
   font-weight: 600;
   padding: 0.75rem 1.5rem;
@@ -79,20 +90,21 @@ body {
 
 .btn-primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(61, 158, 255, 0.35);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
 }
 
 .btn-outline {
   border: 1px solid var(--border);
   color: var(--foreground);
+  background: #ffffff;
   padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
   transition: border-color 0.2s, background 0.2s;
 }
 
 .btn-outline:hover {
-  border-color: rgba(94, 184, 255, 0.5);
-  background: rgba(61, 158, 255, 0.06);
+  border-color: rgba(37, 99, 235, 0.4);
+  background: rgba(37, 99, 235, 0.04);
 }
 
 .section-label {
@@ -101,4 +113,103 @@ body {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--accent);
+}
+
+.logo {
+  width: 240px;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 798px) {
+  .logo {
+    width: 175px;
+  }
+}
+
+.legal-prose {
+  color: var(--foreground);
+  line-height: 1.75;
+}
+
+.legal-prose p {
+  margin-top: 1rem;
+  color: var(--muted);
+}
+
+.legal-prose h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+.legal-prose h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.legal-prose ul {
+  margin-top: 0.75rem;
+  margin-left: 1.25rem;
+  list-style-type: disc;
+  color: var(--muted);
+}
+
+.legal-prose li {
+  margin-top: 0.35rem;
+}
+
+.legal-prose strong {
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+.legal-prose a {
+  color: var(--accent);
+}
+
+/* Loader */
+.loader-screen {
+  background: #ffffff;
+}
+
+.loader-progress-track {
+  height: 3px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.loader-progress-fill {
+  height: 100%;
+  background: var(--flex-gradient);
+  border-radius: 999px;
+  box-shadow: 0 0 12px rgba(37, 99, 235, 0.45), 0 0 20px rgba(124, 58, 237, 0.25);
+  position: relative;
+}
+
+.loader-progress-fill::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.9), 0 0 16px rgba(59, 130, 246, 0.8);
+}
+
+.loader-callout {
+  font-size: 0.625rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  font-weight: 500;
 }
