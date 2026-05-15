@@ -1,4 +1,5 @@
 import { PageHero } from "@/components/PageHero";
+import { ReimbursementPartners } from "@/components/home/ReimbursementPartners";
 import { industries } from "@/lib/content";
 import type { Metadata } from "next";
 
@@ -27,6 +28,8 @@ export default function IndustriesPage() {
               </div>
             ))}
           </div>
+
+          <ReimbursementPartners />
         </div>
       </section>
     </>

@@ -1,5 +1,6 @@
 import { CapabilitiesBanner } from "@/components/home/CapabilitiesBanner";
 import Link from "next/link";
+import Image from "next/image";
 import {
   brand,
   capabilities,
@@ -65,7 +66,18 @@ export default function HomePage() {
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {products.slice(0, 6).map((product) => (
-              <article key={product.name} className="card-glow rounded-xl p-6">
+              <article key={product.name} className="card-glow overflow-hidden rounded-xl p-6">
+                {product.image && (
+                  <div className="relative -mx-6 -mt-6 mb-4 aspect-[4/3] w-[calc(100%+3rem)] border-b border-[var(--border)] bg-[var(--surface-elevated)]">
+                    <Image
+                      src={product.image}
+                      alt={product.imageAlt ?? product.name}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  </div>
+                )}
                 <h3 className="font-semibold text-[var(--accent)]">{product.name}</h3>
                 <p className="mt-3 text-sm text-[var(--muted)]">{product.description}</p>
               </article>
@@ -88,9 +100,6 @@ export default function HomePage() {
               </span>
             ))}
           </div>
-          <Link href="/industries" className="btn-outline mt-10 inline-block">
-            View Industries
-          </Link>
         </div>
       </section>
 

@@ -1,6 +1,7 @@
 import { PageHero } from "@/components/PageHero";
 import { products } from "@/lib/content";
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Products & Prototypes",
@@ -22,7 +23,18 @@ export default function ProductsPage() {
           </p>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {products.map((product) => (
-              <article key={product.name} className="card-glow rounded-xl p-8">
+              <article key={product.name} className="card-glow overflow-hidden rounded-xl p-8">
+                {product.image && (
+                  <div className="relative -mx-8 -mt-8 mb-6 aspect-[4/3] w-[calc(100%+4rem)] border-b border-[var(--border)] bg-[var(--surface-elevated)]">
+                    <Image
+                      src={product.image}
+                      alt={product.imageAlt ?? product.name}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  </div>
+                )}
                 <h3 className="text-lg font-semibold text-[var(--accent)]">{product.name}</h3>
                 <p className="mt-4 text-sm leading-relaxed text-[var(--muted)]">{product.description}</p>
               </article>

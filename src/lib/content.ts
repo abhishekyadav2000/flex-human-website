@@ -97,18 +97,45 @@ export const industries = [
   "Consumer Wearables",
   "AI Physical Systems",
   "Assistive Technology",
+  "Commercial payers & health plans",
+  "Medicare, Medicaid & federal programs",
 ];
 
-export const products = [
+/** Payers / reimbursement — shown with industries (names only; add logo assets under /public when available). */
+export const reimbursementPartnersBanner = {
+  heading: "Reimbursement companies we work with:",
+  partners: [
+    { id: "uhc", name: "UnitedHealthcare" },
+    { id: "bcbs", name: "BlueCross BlueShield" },
+    { id: "medicaid-medicare", name: "Medicaid & Medicare", multiline: true },
+    { id: "cigna", name: "Cigna" },
+    { id: "va", name: "U.S. Department of Veterans Affairs", shortName: "VA" },
+    { id: "humana", name: "Humana" },
+  ],
+} as const;
+
+export type ProductEntry = {
+  name: string;
+  description: string;
+  /** Path under /public, e.g. /prosthetic-identity-wrap.png */
+  image?: string;
+  imageAlt?: string;
+};
+
+export const products: ProductEntry[] = [
   {
     name: "FlexSkin™ Synthetic Interface",
     description:
       "Human-like surface technology for prosthetic and robotic applications.",
+    image: "/flexskin-synthetic-interface.png",
+    imageAlt: "FlexSkin synthetic interface surface technology visualization",
   },
   {
     name: "Prosthetic Identity Wrap System",
     description:
       "Custom prosthetic wraps focused on comfort, dignity, expression, and personalization.",
+    image: "/prosthetic-identity-wrap.png",
+    imageAlt: "Prosthetic identity wrap system visualization",
   },
   {
     name: "FlexAssist™ Wearable Support System",
@@ -119,6 +146,8 @@ export const products = [
     name: "FlexForce™ Human Enhancement Assist",
     description:
       "Mechanical wearable augmentation concept for assisted lifting, endurance support, and industrial movement aid.",
+    image: "/flexforce-human-enhancement-assist.png",
+    imageAlt: "FlexForce human enhancement assist wearable concept visualization",
   },
   {
     name: "Robotic Human Interaction Layer",
@@ -252,11 +281,11 @@ export const footerSolutions = [
 
 export const footerCompany = [
   { label: "About Flex Human", href: "/about" },
-  { label: "Research & Innovation", href: "/about#research" },
+  { label: "Research & Innovation", href: "/research" },
   { label: "Products / Prototypes", href: "/products" },
   { label: "Industries Served", href: "/industries" },
   { label: "Client Services", href: "/contact" },
-  { label: "Insights / News", href: "/about#insights" },
+  { label: "Insights / News", href: "/insights" },
   { label: "Careers", href: "/careers" },
   { label: "Brochure", href: "/brochure" },
   { label: "Partner With Us", href: "/contact" },
