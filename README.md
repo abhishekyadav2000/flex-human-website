@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Flex Human LLC — Corporate Website
 
-## Getting Started
+Official marketing website for **Flex Human LLC**, built from the Flex Human Core Positioning document.
 
-First, run the development server:
+## Stack
+
+- [Next.js](https://nextjs.org/) 16 (App Router)
+- TypeScript
+- Tailwind CSS
+
+## Pages
+
+| Route | Description |
+|-------|-------------|
+| `/` | Home hero, capabilities, products preview, industries, mission |
+| `/about` | Mission, vision, research & innovation |
+| `/solutions` | All 8 capability cards |
+| `/products` | Prototype portfolio (FlexSkin™, FlexAssist™, etc.) |
+| `/industries` | Industries served |
+| `/careers` | Role categories, talent community form, social CTAs |
+| `/contact` | Contact form with inquiry types |
+| `/corporate-information` | Texas LLC registration, legal links |
+
+## Local development
 
 ```bash
+cd ~/Desktop/flex-human-website
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Production build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Deploy to GitHub
 
-To learn more about Next.js, take a look at the following resources:
+Create a **new** repository on GitHub (e.g. `flex-human-website`), then:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+cd ~/Desktop/flex-human-website
+git remote add origin https://github.com/abhishekyadav2000/flex-human-website.git
+git add .
+git commit -m "Initial Flex Human corporate website from core positioning doc"
+git branch -M main
+git push -u origin main
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Recommended hosting: [Vercel](https://vercel.com) (connect the GitHub repo for automatic deploys to `www.iflexhuman.com`).
 
-## Deploy on Vercel
+## Contact
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Email:** admin@iflexhuman.com
+- **Website:** https://www.iflexhuman.com
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+© 2026 Flex Human LLC. Registered in Texas, USA. Texas File Number: 806448689
