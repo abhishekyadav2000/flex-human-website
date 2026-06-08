@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { LoadingGate } from "@/components/LoadingGate";
+import { Providers } from "@/components/Providers";
 import { SiteLayout } from "@/components/SiteLayout";
 import { brand } from "@/lib/content";
 import "./globals.css";
@@ -43,7 +44,9 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col">
         <LoadingGate>
-          <SiteLayout>{children}</SiteLayout>
+          <Providers>
+            <SiteLayout>{children}</SiteLayout>
+          </Providers>
         </LoadingGate>
       </body>
     </html>

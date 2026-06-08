@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { CartIconButton } from "@/components/shop/StarRating";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -44,26 +45,30 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden shrink-0 lg:block">
-          <Link href="/contact" className="btn-primary whitespace-nowrap text-sm xl:text-base">
+        <div className="hidden shrink-0 items-center gap-3 lg:flex">
+          <CartIconButton />
+          <Link href="/partner" className="btn-primary whitespace-nowrap text-sm xl:text-base">
             Partner With Us
           </Link>
         </div>
 
-        <button
-          type="button"
-          className="shrink-0 text-[var(--muted)] lg:hidden"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-        >
-          <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            {open ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            )}
-          </svg>
-        </button>
+        <div className="flex shrink-0 items-center gap-2 lg:hidden">
+          <CartIconButton />
+          <button
+            type="button"
+            className="shrink-0 text-[var(--muted)]"
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
+          >
+            <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              {open ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
+        </div>
       </div>
 
       {open && (
@@ -78,7 +83,7 @@ export function Header() {
               {link.label}
             </Link>
           ))}
-          <Link href="/contact" className="btn-primary mt-4 block text-center" onClick={() => setOpen(false)}>
+          <Link href="/partner" className="btn-primary mt-4 block text-center" onClick={() => setOpen(false)}>
             Partner With Us
           </Link>
         </nav>

@@ -21,7 +21,7 @@ export default function HomePage() {
             {hero.subheadline}
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Link href="/contact" className="btn-primary">
+            <Link href="/partner" className="btn-primary">
               Partner With Us
             </Link>
           </div>

@@ -115,52 +115,168 @@ export const reimbursementPartnersBanner = {
 } as const;
 
 export type ProductEntry = {
+  id: string;
   name: string;
   description: string;
   /** Path under /public, e.g. /prosthetic-identity-wrap.png */
   image?: string;
   imageAlt?: string;
+  price: number;
+  listPrice?: number;
+  rating: number;
+  reviewCount: number;
+  category: "Prosthetics" | "Wearables" | "Robotics" | "Services";
+  badge?: string;
+  inStock: boolean;
+  features: string[];
+  purchasable: boolean;
 };
+
+export const productCategories = [
+  "All",
+  "Prosthetics",
+  "Wearables",
+  "Robotics",
+  "Services",
+] as const;
 
 export const products: ProductEntry[] = [
   {
+    id: "flexskin-synthetic-interface",
     name: "FlexSkin™ Synthetic Interface",
     description:
       "Human-like surface technology for prosthetic and robotic applications.",
     image: "/flexskin-synthetic-interface.png",
     imageAlt: "FlexSkin synthetic interface surface technology visualization",
+    price: 2499,
+    listPrice: 2899,
+    rating: 4.7,
+    reviewCount: 128,
+    category: "Prosthetics",
+    badge: "Best Seller",
+    inStock: true,
+    features: [
+      "Bio-inspired tactile surface layer",
+      "Compatible with major prosthetic socket systems",
+      "Custom color and texture options",
+      "Medical-grade silicone composite",
+    ],
+    purchasable: true,
   },
   {
+    id: "prosthetic-identity-wrap",
     name: "Prosthetic Identity Wrap System",
     description:
       "Custom prosthetic wraps focused on comfort, dignity, expression, and personalization.",
     image: "/prosthetic-identity-wrap.png",
     imageAlt: "Prosthetic identity wrap system visualization",
+    price: 349,
+    listPrice: 429,
+    rating: 4.8,
+    reviewCount: 256,
+    category: "Prosthetics",
+    badge: "Top Rated",
+    inStock: true,
+    features: [
+      "Personalized aesthetic identity design",
+      "Breathable, skin-friendly materials",
+      "Easy snap-on installation",
+      "Includes custom fitting consultation",
+    ],
+    purchasable: true,
   },
   {
+    id: "flexassist-wearable-support",
     name: "FlexAssist™ Wearable Support System",
     description:
       "Wearable augmentation system to reduce muscular stress and improve assisted movement.",
+    price: 1899,
+    rating: 4.5,
+    reviewCount: 89,
+    category: "Wearables",
+    inStock: true,
+    features: [
+      "Adaptive strain-reduction support",
+      "Lightweight modular frame",
+      "Adjustable assist levels",
+      "Rechargeable smart controller",
+    ],
+    purchasable: true,
   },
   {
+    id: "flexforce-human-enhancement",
     name: "FlexForce™ Human Enhancement Assist",
     description:
       "Mechanical wearable augmentation concept for assisted lifting, endurance support, and industrial movement aid.",
     image: "/flexforce-human-enhancement-assist.png",
     imageAlt: "FlexForce human enhancement assist wearable concept visualization",
+    price: 3299,
+    listPrice: 3699,
+    rating: 4.6,
+    reviewCount: 64,
+    category: "Wearables",
+    badge: "New",
+    inStock: true,
+    features: [
+      "Industrial-grade force assistance",
+      "Ergonomic exoskeleton design",
+      "8-hour battery life",
+      "Safety-certified load distribution",
+    ],
+    purchasable: true,
   },
   {
+    id: "robotic-human-interaction",
     name: "Robotic Human Interaction Layer",
     description:
       "Protective tactile surface engineering for humanoid robotics.",
+    price: 1799,
+    rating: 4.4,
+    reviewCount: 42,
+    category: "Robotics",
+    inStock: true,
+    features: [
+      "Human-safe tactile surface coating",
+      "Impact-resistant composite shell",
+      "Integrated sensor-ready mounting",
+      "Compatible with humanoid platforms",
+    ],
+    purchasable: true,
   },
   {
+    id: "ai-design-pipeline",
     name: "AI Design-to-Prototype Pipeline",
     description: "Digital workflow platform for accelerated innovation.",
+    price: 999,
+    rating: 4.3,
+    reviewCount: 31,
+    category: "Services",
+    inStock: true,
+    features: [
+      "AI-assisted CAD generation",
+      "Rapid iteration workflows",
+      "Simulation and validation tools",
+      "Team collaboration dashboard",
+    ],
+    purchasable: true,
   },
   {
+    id: "custom-prototype-lab",
     name: "Client Custom Prototype Lab",
     description: "Custom concept-to-build engineering services.",
+    price: 4999,
+    rating: 4.9,
+    reviewCount: 18,
+    category: "Services",
+    badge: "Premium",
+    inStock: true,
+    features: [
+      "Dedicated engineering team",
+      "Concept-to-prototype in weeks",
+      "Materials and manufacturing guidance",
+      "Includes 3 discovery sessions",
+    ],
+    purchasable: true,
   },
 ];
 
@@ -288,7 +404,7 @@ export const footerCompany = [
   { label: "Insights / News", href: "/insights" },
   { label: "Careers", href: "/careers" },
   { label: "Brochure", href: "/brochure" },
-  { label: "Partner With Us", href: "/contact" },
+  { label: "Partner With Us", href: "/partner" },
 ];
 
 export const legalLinks = [

@@ -1,26 +1,26 @@
-import { AppointmentForm } from "@/components/AppointmentForm";
+import { ContactForm } from "@/components/ContactForm";
 import { PageHero } from "@/components/PageHero";
 import { brand } from "@/lib/content";
 import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Contact",
-  description: "Get in touch with Flex Human. Request an appointment or reach us directly.",
+  title: "Partner With Us",
+  description: "Connect with Flex Human for prototypes, collaboration, research, and strategic partnerships.",
 };
 
-export default function ContactPage() {
+export default function PartnerPage() {
   return (
     <>
       <PageHero
-        label="Contact"
-        title="Get In Touch"
-        description="Schedule a consultation with our team or reach us directly through the channels below."
+        label="Partner With Us"
+        title="Connect With Flex Human"
+        description="Whether you're building robotics, exploring prosthetics, researching human augmentation, seeking strategic collaboration, or joining our mission—we're ready to connect."
       />
       <section className="px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2">
           <div>
-            <h2 className="text-xl font-semibold">Contact Details</h2>
+            <h2 className="text-xl font-semibold">Headquarters / Digital Presence</h2>
             <ul className="mt-6 space-y-4 text-[var(--muted)]">
               <li>
                 <strong className="text-[var(--foreground)]">Flex Human LLC</strong>
@@ -56,11 +56,14 @@ export default function ContactPage() {
                 </Link>
               </li>
             </ul>
+            <div className="mt-10 card-glow rounded-xl p-6">
+              <p className="text-sm font-semibold">Strategic Partnerships &amp; Investor Relations</p>
+              <p className="mt-2 text-sm text-[var(--muted)]">
+                For investor inquiries, contact {brand.email}
+              </p>
+            </div>
           </div>
-          <div>
-            <h2 className="mb-6 text-xl font-semibold">Request an Appointment</h2>
-            <AppointmentForm />
-          </div>
+          <ContactForm />
         </div>
       </section>
     </>

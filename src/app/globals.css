@@ -213,3 +213,49 @@ body {
   color: #94a3b8;
   font-weight: 500;
 }
+
+/* Amazon-style shop */
+.amazon-btn-cart {
+  background: #ffd814;
+  border: 1px solid #fcd200;
+  border-radius: 999px;
+  color: #0f1111;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  transition: background 0.15s;
+}
+
+.amazon-btn-cart:hover {
+  background: #f7ca00;
+}
+
+.amazon-btn-buy {
+  background: #ffa41c;
+  border: 1px solid #ff8f00;
+  border-radius: 999px;
+  color: #0f1111;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  transition: background 0.15s;
+}
+
+.amazon-btn-buy:hover {
+  background: #fa8900;
+}
+
+.amazon-input {
+  width: 100%;
+  border: 1px solid #888c8c;
+  border-radius: 0.375rem;
+  background: #fff;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.amazon-input:focus {
+  outline: 2px solid #e77600;
+  outline-offset: 0;
+  border-color: #e77600;
+}
